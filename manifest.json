@@ -1,7 +1,7 @@
 {
 
     "manifest_version": 2,
-    "name": "Upwork Customizer",
+    "name": "Upwork Job Post Customizer",
     "version": "1.0",
   
     "description": "Upwork Job Post Customization",
@@ -17,12 +17,17 @@
     "content_scripts": [
       {
         "matches": ["*://*.upwork.com/*"],
-        "js": ["upwork_customizer.js"]
+        "js": ["content.js"]
       }
     ],
 
+    "background": {
+      "scripts": [
+        "background.js"
+      ]
+    },
+
     "permissions": [
-        "menus",
         "activeTab",
         "contextMenus"
     ]
