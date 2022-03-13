@@ -118,10 +118,13 @@ document.addEventListener("click", (e) => {
           },
         },
         proposal: {
-          trigger: document.querySelector("#proposals_trigger").value,
           color: {
-            less: document.querySelector("#proposals_trigger_less_than_equal_color").value,
-            greater: document.querySelector("#proposals_trigger_greater_than_color").value
+            lt5: document.querySelector("#lt5").value,
+            f5to10: document.querySelector("#f5to10").value,
+            f10to15: document.querySelector("#f10to15").value,
+            f15to20: document.querySelector("#f15to20").value,
+            f20to50: document.querySelector("#f20to50").value,
+            proother: document.querySelector("#proother").value,
           }
         }
       }
@@ -137,13 +140,16 @@ document.addEventListener("click", (e) => {
   function restoreOptions() {
     var savedData = browser.storage.sync.get('configuration');
     savedData.then((res) => {
-      document.querySelector("#blocked_countries").value = res.configuration.countries.blocked.list.join(",") || "India,Bangladesh,Pakistan";
+      document.querySelector("#blocked_countries").value = res.configuration.countries.blocked.list.join(",") || "India";
       document.querySelector("#blocked_countries_color").value = res.configuration.countries.blocked.color || "silver";
       document.querySelector("#highlight_countries").value = res.configuration.countries.highlighted.list.join(",") || "United States";
       document.querySelector("#highlight_countries_color").value = res.configuration.countries.highlighted.color || "#8ab7ff";
-      document.querySelector("#proposals_trigger").value = res.configuration.proposal.trigger || "Less than 5";
-      document.querySelector("#proposals_trigger_less_than_equal_color").value = res.configuration.proposal.color.less || "#8ab7ff";
-      document.querySelector("#proposals_trigger_greater_than_color").value = res.configuration.proposal.color.greater || "silver";
+      document.querySelector("#lt5").value = res.configuration.proposal.color.lt5 || "green";
+      document.querySelector("#f5to10").value = res.configuration.proposal.color.f5to10 || "silver";
+      document.querySelector("#f10to15").value = res.configuration.proposal.color.f10to15 || "silver";
+      document.querySelector("#f15to20").value = res.configuration.proposal.color.f15to20 || "silver";
+      document.querySelector("#f20to50").value = res.configuration.proposal.color.f20to50 || "silver";
+      document.querySelector("#proother").value = res.configuration.proposal.color.proother || "silver";
     });
 
     console.log("Restored");
