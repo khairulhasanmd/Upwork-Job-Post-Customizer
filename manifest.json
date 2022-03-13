@@ -8,7 +8,6 @@
     "name": "Md. Khairul Hasan",
     "url": "https://axiom.org.bd"
   },
-  "default_locale": "en",
   "description": "Upwork Job Post Customization",
 
   "browser_action": {
