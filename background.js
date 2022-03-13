@@ -17,7 +17,6 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
 
         // context_menu_helper.js defines function copyToClipboard.
         const code = "log_data(" +
-            JSON.stringify(text) + "," +
             JSON.stringify(html) + ");";
 
         browser.tabs.executeScript({

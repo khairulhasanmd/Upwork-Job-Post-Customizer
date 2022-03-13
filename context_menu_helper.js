@@ -1,3 +1,3 @@
-function log_data(data, dda){
-    console.log(data, dda);
+function log_data(data){
+    console.log(data);
 }

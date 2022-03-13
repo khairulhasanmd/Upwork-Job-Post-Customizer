@@ -12,28 +12,55 @@
         <div class="panel-section panel-section-header">
             <div class="text-section-header">Upwork Job Post Customizer</div>
         </div>
+        <form id="form">
 
-        <div>
-            <label for="blocked_countries">Blocked Countries(Comma Separated):</label>
-            <input type="text" name="blocked_countries" id="blocked_countries" value="India,Bangladesh,Pakistan">
-        </div>
+            <div>
+                <label for="blocked_countries">Blocked Countries(Comma Separated):</label>
+                <input type="text" name="blocked_countries" id="blocked_countries" value="India,Bangladesh,Pakistan">
+            </div>
+            
+            <div>
+                <label for="blocked_countries">Blocked Countries color:</label>
+                <input type="text" name="blocked_countries_color" id="blocked_countries_color" value="silver">
+            </div>
 
-        <div class="panel-section-separator"></div>
+            <div class="panel-section-separator"></div>
+
+            <div>
+                <label for="highlight_countries">Highlight Countries(Comma Separated):</label>
+                <input type="text" name="highlight_countries" id="highlight_countries" value="India,Bangladesh,Pakistan">
+            </div>
+
+            <div>
+                <label for="highlight_countries">Highlight Countries color:</label>
+                <input type="text" name="highlight_countries_color" id="highlight_countries_color" value="#6fda44">
+            </div>
+
+            <div class="panel-section-separator"></div>
+
+            <div>
+                <label for="proposals_trigger">Proposals count trigger:</label><br>
+                <select name="proposals_trigger" id="proposals_trigger">
+                    <option value="Less than 5">Less than 5</option>
+                    <option value="5 to 10">5 to 10</option>
+                    <option value="10 to 15">10 to 15</option>
+                    <option value="15 to 20">15 to 20</option>
+                    <option value="20 to 50">20 to 50</option>
+                    <option value="more_than_that">More Than That</option>
+                </select><br>
+                <label for="proposals_trigger_less_than_equal_color">Proposals trigger less than or equal color:</label>
+                <input type="text" name="proposals_trigger_less_than_equal_color" id="proposals_trigger_less_than_equal_color" value="#8ab7ff">
+                <label for="proposals_trigger_greater_than_color">Proposals trigger greater than color:</label>
+                <input type="text" name="proposals_trigger_greater_than_color" id="proposals_trigger_greater_than_color" value="silver">
+            </div>
+
+            <div class="panel-section-separator"></div>
+
+            <div>
+                <input type="submit" name="submit" id="submit" value="Save" onclick="saveOptions(event);">
+            </div>
         
-        <div>
-            <label for="blocked_countries">Blocked Countries color:</label>
-            <input type="text" name="blocked_countries_color" id="blocked_countries_color" value="silver">
-        </div>
-
-        <div>
-            <label for="blocked_countries">Highlight Countries(Comma Separated):</label>
-            <input type="text" name="blocked_countries" id="blocked_countries" value="India,Bangladesh,Pakistan">
-        </div>
-
-        <div>
-            <label for="blocked_countries">Highlight Countries color:</label>
-            <input type="text" name="blocked_countries_color" id="blocked_countries_color" value="#6fda44">
-        </div>
+        </form>
 
     </div>
 

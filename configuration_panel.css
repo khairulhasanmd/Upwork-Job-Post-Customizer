@@ -1,5 +1,5 @@
 html, body {
-    width: 350px;
+    width: 250px;
   }
   
   a {
@@ -9,5 +9,10 @@ html, body {
   
   .panel {
     margin: 5px;
+  }
+
+  .panel-section-separator{
+      margin-top: 10px;
+      margin-bottom: 10px;
   }
   
