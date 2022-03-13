@@ -3,7 +3,12 @@
   "manifest_version": 2,
   "name": "Upwork Job Post Customizer",
   "version": "1.0",
-
+  "author": "Md. Khairul Hasan",
+  "developer": {
+    "name": "Md. Khairul Hasan",
+    "url": "https://axiom.org.bd"
+  },
+  "default_locale": "en",
   "description": "Upwork Job Post Customization",
 
   "browser_action": {
