@@ -13,6 +13,8 @@ promise_pms.then((res) => {
 function mainOperation() {
     console.log(savedData.configuration);
     var blockedCountriesLength = savedData.configuration.countries.blocked.list.length;
+    var highlightedCountriesLength = savedData.configuration.countries.highlighted.list.length;
+
     var jobPosts = document.querySelectorAll('.up-card-list-section');
     var len = jobPosts.length;
     for (var i = 0; i < len; i++) {
@@ -20,8 +22,13 @@ function mainOperation() {
             jobPosts[i].style.backgroundColor = savedData.configuration.proposal.color.less;
         }
         for (var j = 0; j < blockedCountriesLength; j++) {
-            if (jobPosts[i].querySelector('.d-none > strong').innerText == savedData.configuration.countries.blocked.list[j]){//country
-                jobPosts[i].style.backgroundColor = "silver";
+            if (jobPosts[i].querySelector('.d-none > strong').innerText == savedData.configuration.countries.blocked.list[j]){//blocked country
+                jobPosts[i].style.backgroundColor = savedData.configuration.countries.blocked.color;
+            }
+        }
+        for (var j = 0; j < highlightedCountriesLength; j++) {
+            if (jobPosts[i].querySelector('.d-none > strong').innerText == savedData.configuration.countries.highlighted.list[j]){//highlighted country
+                jobPosts[i].style.backgroundColor = savedData.configuration.countries.highlighted.color;
             }
         }
     }
