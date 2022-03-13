@@ -128,29 +128,22 @@ document.addEventListener("click", (e) => {
     });
     e.preventDefault();
     console.log("saved");
+    var savedData = browser.storage.sync.get('configuration');
+    savedData.then((res) => {
+      console.log(res.configuration.countries);
+    });
   }
   
   function restoreOptions() {
-    // var savedData = browser.storage.managed.get('configuration');
-    // savedData.then((res) => {
-    //   document.querySelector("#blocked_countries").value = savedData.countries.blocked.list.join(",");
-    //   document.querySelector("#blocked_countries_color").value = savedData.countries.blocked.color;
-    //   document.querySelector("#highlight_countries").value = savedData.countries.highlighted.list.join(",");
-    //   document.querySelector("#highlight_countries_color").value = savedData.countries.highlighted.color;
-    //   document.querySelector("#proposals_trigger").value = savedData.proposal.trigger;
-    //   document.querySelector("#proposals_trigger_less_than_equal_color").value = savedData.proposal.color.less;
-    //   document.querySelector("#proposals_trigger_greater_than_color").value = savedData.proposal.color.greater;
-    // });
-  
     var savedData = browser.storage.sync.get('configuration');
     savedData.then((res) => {
-      document.querySelector("#blocked_countries").value = savedData.countries.blocked.list.join(",") || "India,Bangladesh,Pakistan";
-      document.querySelector("#blocked_countries_color").value = savedData.countries.blocked.color || "silver";
-      document.querySelector("#highlight_countries").value = savedData.countries.highlighted.list.join(",") || "United States";
-      document.querySelector("#highlight_countries_color").value = savedData.countries.highlighted.color || "#8ab7ff";
-      document.querySelector("#proposals_trigger").value = savedData.proposal.trigger || "Less than 5";
-      document.querySelector("#proposals_trigger_less_than_equal_color").value = savedData.proposal.color.less || "#8ab7ff";
-      document.querySelector("#proposals_trigger_greater_than_color").value = savedData.proposal.color.greater || "silver";
+      document.querySelector("#blocked_countries").value = res.configuration.countries.blocked.list.join(",") || "India,Bangladesh,Pakistan";
+      document.querySelector("#blocked_countries_color").value = res.configuration.countries.blocked.color || "silver";
+      document.querySelector("#highlight_countries").value = res.configuration.countries.highlighted.list.join(",") || "United States";
+      document.querySelector("#highlight_countries_color").value = res.configuration.countries.highlighted.color || "#8ab7ff";
+      document.querySelector("#proposals_trigger").value = res.configuration.proposal.trigger || "Less than 5";
+      document.querySelector("#proposals_trigger_less_than_equal_color").value = res.configuration.proposal.color.less || "#8ab7ff";
+      document.querySelector("#proposals_trigger_greater_than_color").value = res.configuration.proposal.color.greater || "silver";
     });
 
     console.log("Restored");
