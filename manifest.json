@@ -1,36 +1,46 @@
 {
 
-    "manifest_version": 2,
-    "name": "Upwork Job Post Customizer",
-    "version": "1.0",
-  
-    "description": "Upwork Job Post Customization",
-  
-    "icons": {
-      "48": "icons/48x48.png",
-      "72": "icons/72x72.png",
-      "96": "icons/96x96.png",
-      "144": "icons/144x144.png",
-      "192": "icons/192x192.png"
-    },
-  
-    "content_scripts": [
-      {
-        "matches": ["*://*.upwork.com/*"],
-        "js": ["content.js"]
-      }
-    ],
+  "manifest_version": 2,
+  "name": "Upwork Job Post Customizer",
+  "version": "1.0",
 
-    "background": {
-      "scripts": [
-        "background.js"
-      ]
-    },
+  "description": "Upwork Job Post Customization",
 
-    "permissions": [
-        "activeTab",
-        "contextMenus"
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Window manipulator",
+    "default_popup": "configuration_panel.html",
+    "default_icon": {
+      "19": "icons/48x48.png",
+      "38": "icons/48x48.png"
+    }
+  },
+
+  "icons": {
+    "48": "icons/48x48.png",
+    "72": "icons/72x72.png",
+    "96": "icons/96x96.png",
+    "144": "icons/144x144.png",
+    "192": "icons/192x192.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.upwork.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": [
+      "background.js"
     ]
-  
-  }
+  },
+
+  "permissions": [
+      "activeTab",
+      "contextMenus"
+  ]
+
+}
   
