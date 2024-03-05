@@ -57,3 +57,49 @@
 //         .replace(/</g, "&lt;").replace(/>/g, "&gt;");
 // }
 
+browser.runtime.onInstalled.addListener((details) => {
+    if (details.reason === 'install') {
+      // Perform actions when the extension is first installed
+      // For example, create a default configuration
+      const defaultConfig = {
+        "countries": {
+          "blocked": {
+            "list": [
+              "India",
+              "Bangladesh",
+              "Pakistan",
+              "Israel"
+            ],
+            "color": "silver"
+          },
+          "highlighted": {
+            "list": [
+              "South Africa",
+              "France",
+              "Germany",
+              "Canada",
+              "United States",
+              "United Kingdom"
+            ],
+            "color": "pink"
+          }
+        },
+        "proposal": {
+          "color": {
+            "lt5": "#73bb44",
+            "f5to10": "#4fab4a",
+            "f10to15": "#8ccc8c",
+            "f15to20": "#b5deb1",
+            "f20to50": "#385925",
+            "proother": ""
+          }
+        }
+      };
+      browser.storage.sync.set({ configuration: defaultConfig });
+    }
+  });
+
+
+
+
+  
